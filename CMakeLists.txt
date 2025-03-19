@@ -19,14 +19,15 @@ find_package(tf2_ros REQUIRED)
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
-install(DIRECTORY
-  launch
-  DESTINATION share/${PROJECT_NAME}/
-)
 
 add_executable( rtabmap_tf_publisher src/rtabmap_tf_publisher.cpp )
 ament_target_dependencies( rtabmap_tf_publisher rclcpp nav_msgs tf2 tf2_ros Eigen3 px4_msgs rclpy )
 install(TARGETS rtabmap_tf_publisher DESTINATION lib/${PROJECT_NAME})
+
+install(DIRECTORY
+  launch
+  DESTINATION share/${PROJECT_NAME}/
+)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

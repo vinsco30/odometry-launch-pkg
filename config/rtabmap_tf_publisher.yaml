@@ -1,0 +1,7 @@
+
+rtabmap_tf_publisher:
+  ros__parameters:
+    use_t265: True
+    use_rtabamp: False
+    target_frame: "base_link"
+    source_frame: "map"
